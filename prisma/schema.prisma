@@ -35,3 +35,21 @@ model User {
   posts   Post[]
   profile Profile?
 }
+
+model Dish {
+  id             Int      @id @default(autoincrement())
+  title          String   
+  discription    String   @db.VarChar(255)
+  price          Float
+  img            String
+  mass           Int
+  groups         Groups   @relation(fields: [groupsId], references: [id])
+  groupsId       Int
+
+}
+
+model Groups {
+  id      Int      @id @default(autoincrement())
+  title   String   
+  dish    Dish[]       
+}
