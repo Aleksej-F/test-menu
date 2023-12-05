@@ -34,6 +34,12 @@ const router = createRouter({
       component: () => import('../views/Signup.vue'),
       props: true,
     },
+    {
+      path: '/dish/:operation',
+      name: 'dishEdit',
+      meta: {loyout: 'page', autch: true},
+      component: () => import('../views/DishEditView.vue')
+    },
   ]
 })
 
