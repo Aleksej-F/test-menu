@@ -17,7 +17,7 @@
           <label class="label"><b>Название:</b> </label>
           <div class="custom-radio img_block">  
             <input  
-              v-model= "title"
+              v-model="title"
               class="input_alias" 
             >
             <i class="bi bi-eraser custom-close" title="Очистить поле"
@@ -92,18 +92,18 @@
   const groups = ref('')
   
   async function onSubmit(e){
-    let dish = {
-      id :  dishId.value,
-      title :  title.value,     
-      discription:  discription.value,
-      price :price.value,
-      img: img.value,
-      mass: mass.value,
-      groups: groups.value,
+    let body = {
+      // id :  dishId.value,
+      "title": title.value,     
+      "discription":  discription.value,
+      "price":+price.value,
+      // img: img.value,
+      "mass": +mass.value,
+      // groups: groups.value,
  
     }
 
-    await dish.setCreateDishDB(dish)
+    await dish.setCreateDishDB(body)
   }
   
 </script>

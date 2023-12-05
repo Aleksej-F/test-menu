@@ -32,10 +32,11 @@ export const useMenuDishStore = defineStore('menu', {
         method: 'post',
         url: `/dishs`,
         headers: { 
-          Accept: 'application/json', 
+          'Content-Type': 'application/json' 
         },
-        body
+        data: JSON.stringify(body)
       };
+      console.log(config)
       const res = await setUseAsyncFetch({config})
       console.log(res)
       if (res && res.data) {
