@@ -2,9 +2,10 @@ let expresstt = require('express');
 const router = expresstt.Router();
 const {
   getDishs,
+  addDish,
 } = require("./controllers");
 
-console.log("gfhfghf")
+console.log("роутер")
 router.get('/',  getDishs);
-
+router.post('/', addDish);
 module.exports = router;

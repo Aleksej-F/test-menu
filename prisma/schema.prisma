@@ -41,10 +41,10 @@ model Dish {
   title          String   
   discription    String   @db.VarChar(255)
   price          Float
-  img            String
+  img            String?
   mass           Int
-  groups         Groups   @relation(fields: [groupsId], references: [id])
-  groupsId       Int
+  groups         Groups?   @relation(fields: [groupsId], references: [id])
+  groupsId       Int?
 
 }
 
